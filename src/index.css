@@ -121,6 +121,22 @@ image-slot {
   }
 }
 
+/* product modal entrance */
+@keyframes modal-panel-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+@keyframes modal-backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.modal-panel {
+  animation: modal-panel-in 0.38s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.modal-backdrop {
+  animation: modal-backdrop-in 0.22s ease both;
+}
+
 /* marquee */
 @keyframes marquee { 
   from { 

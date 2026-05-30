@@ -126,4 +126,5 @@ export function smoothTo(id) {
   if (!el) return;
   const top = el.getBoundingClientRect().top + window.scrollY - 76;
   window.scrollTo({ top, behavior: 'matchMedia' in window && window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  window.history.pushState(null, '', `#${id}`);
 }

@@ -52,7 +52,8 @@ export default {
     'items-start', 'items-center', 'items-end', 'items-baseline', 'items-stretch',
     'justify-start', 'justify-center', 'justify-end', 'justify-between', 'justify-around', 'justify-evenly',
     // Grid
-    'grid-cols-2', 'grid-cols-12', 'md:grid-cols-2', 'md:grid-cols-12', 'lg:grid-cols-12', 'sm:grid-cols-2',
+    'grid-cols-2', 'grid-cols-3', 'grid-cols-4', 'grid-cols-12',
+    'md:grid-cols-2', 'md:grid-cols-12', 'lg:grid-cols-3', 'lg:grid-cols-12', 'sm:grid-cols-2',
     'col-span-1', 'col-span-2', 'col-span-3', 'col-span-4', 'col-span-5', 'col-span-6', 'col-span-7',
     'md:col-span-1', 'md:col-span-2', 'md:col-span-5', 'md:col-span-6', 'md:col-span-7', 'md:col-span-12',
     'lg:col-span-4', 'lg:col-span-5', 'lg:col-span-6', 'lg:col-span-7',
