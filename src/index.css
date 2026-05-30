@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { 
+  scroll-behavior: smooth; 
+  -webkit-font-smoothing: antialiased; 
+  text-rendering: optimizeLegibility; 
+}
+
+body { 
+  background: #F2EBDD; 
+  color: #26221E; 
+  overflow-x: hidden;
+  font-family: "Hanken Grotesk", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+::selection { 
+  background: #26221E; 
+  color: #F2EBDD; 
+}
+
+/* thin warm scrollbar */
+::-webkit-scrollbar { 
+  width: 10px; 
+}
+
+::-webkit-scrollbar-track { 
+  background: #ECE3D2; 
+}
+
+::-webkit-scrollbar-thumb { 
+  background: #CBBC9F; 
+  border-radius: 8px; 
+  border: 2px solid #ECE3D2; 
+}
+
+.font-display { 
+  font-family: "Cormorant Garamond", Georgia, serif; 
+}
+
+.label { 
+  font-family: "Jost", system-ui, sans-serif; 
+  text-transform: uppercase; 
+  letter-spacing: 0.28em; 
+}
+
+.ital { 
+  font-style: italic; 
+}
+
+/* image-slot styling so empty state matches the warm palette */
+image-slot {
+  --slot-bg: #E7DCC8;
+  --slot-fg: #9A8E78;
+  --slot-border: #CFC0A4;
+  display: block;
+}
+
+/* hover image-swap for product cards */
+.swap-back { 
+  opacity: 0; 
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+
+.group:hover .swap-back { 
+  opacity: 1; 
+}
+
+.group:hover .swap-front { 
+  opacity: 0; 
+}
+
+.swap-front { 
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+
+.show-back .swap-back {
+  opacity: 1;
+}
+
+.show-back .swap-front {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* product zoom */
+.zoom-hit {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: zoom-in;
+}
+
+.zoom-hit:focus-visible {
+  outline: 2px solid #c96442;
+  outline-offset: -2px;
+}
+
+.zoom-frame {
+  --zoom-x: 50%;
+  --zoom-y: 50%;
+}
+
+.zoom-image {
+  transform-origin: var(--zoom-x) var(--zoom-y);
+  transition: transform 140ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .zoom-frame:hover .zoom-image {
+    transform: scale(1.8);
+  }
+}
+
+/* marquee */
+@keyframes marquee { 
+  from { 
+    transform: translateX(0); 
+  } 
+  to { 
+    transform: translateX(-50%); 
+  } 
+}
+
+.marquee-track { 
+  animation: marquee 34s linear infinite; 
+}
+
+/* subtle floating for the watermark motif */
+@keyframes drift { 
+  0%, 100% { 
+    transform: translateY(0); 
+  } 
+  50% { 
+    transform: translateY(-14px); 
+  } 
+}
+
+.drift { 
+  animation: drift 9s ease-in-out infinite; 
+}
+
+/* nav underline */
+.nav-link { 
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.nav-link::after {
+  content: ''; 
+  position: absolute; 
+  left: 0; 
+  bottom: -4px; 
+  height: 1px; 
+  width: 100%;
+  background: currentColor; 
+  transform: scaleX(0); 
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover::after { 
+  transform: scaleX(1); 
+}
+
+.cta-line { 
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.cta-line::after {
+  content: ''; 
+  position: absolute; 
+  left: 0; 
+  bottom: -2px; 
+  height: 1px; 
+  width: 100%;
+  background: currentColor; 
+  transform: scaleX(1); 
+  transform-origin: right;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-line:hover::after { 
+  transform: scaleX(0); 
+}
+
+/* Button resets */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { 
+    animation: none !important;
+    transition: none !important;
+  }
+  html { 
+    scroll-behavior: auto; 
+  }
+}
+
+/* Link resets */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Ensure tabular numbers work */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Ensure proper font weights */
+h1, h2, h3 {
+  font-weight: 500;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
