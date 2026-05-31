@@ -52,7 +52,7 @@ export function Hero({ onShop }) {
           <Reveal y={48} delay={120}>
             <div className="relative md:translate-x-4 lg:translate-x-6 xl:translate-x-12">
               <div className="relative overflow-hidden bg-sand rounded-[2px] aspect-[4/5] max-h-[54vh] md:aspect-auto md:max-h-[640px] md:h-[72vh] lg:h-[78vh] lg:max-h-[760px]">
-                <div ref={imgRef} className="absolute -inset-y-[10%] inset-x-0">
+                <div ref={imgRef} className="absolute inset-0">
                   <img
                     className="logo w-full h-full object-contain p-10"
                     src="/logo.png"
