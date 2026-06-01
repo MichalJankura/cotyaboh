@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Header, MobileMenu, CartDrawer, Footer } from './chrome';
-import { Hero, Marquee, ONas, Desatoro, Why, ClosingBand, Shop, Reviews } from './sections';
+import { Hero, Marquee, ONas, Desatoro, Why, Saints, ClosingBand, Shop, Reviews } from './sections';
 import { smoothTo, makeKey, parseKey, MAX_QTY } from './lib';
 import './index.css';
 
@@ -63,7 +63,7 @@ export const PRODUCTS = [
   },
 ];
 
-const SECTION_IDS = ['hero', 'onas', 'kolekcia', 'preco', 'shop', 'kontakt'];
+const SECTION_IDS = ['hero', 'onas', 'kolekcia', 'preco', 'svatci', 'shop', 'kontakt'];
 
 function App() {
   const [items, setItems] = useState({});
@@ -156,6 +156,7 @@ function App() {
         <ONas />
         <Desatoro />
         <Why />
+        <Saints />
         <Shop products={PRODUCTS} onAdd={addItem} />
         <Reviews />
         <ClosingBand onShop={() => smoothTo('shop')} />

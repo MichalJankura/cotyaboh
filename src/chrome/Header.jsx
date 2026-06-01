@@ -3,6 +3,7 @@ import { Icon, eur, smoothTo } from '../lib';
 
 const NAV = [
   { label: 'O nás', id: 'onas' },
+  { label: 'Svätci', id: 'svatci' },
   { label: 'Kolekcia', id: 'kolekcia' },
   { label: 'Shop', id: 'shop' },
   { label: 'Kontakt', id: 'kontakt' },
@@ -46,8 +47,9 @@ export function Header({ cartCount, cartTotal, onCartOpen, onMenuOpen }) {
         {/* right — nav + cart */}
         <div className="flex-1 flex items-center justify-end gap-6">
           <nav className="hidden md:flex items-center gap-8 label text-[11px] text-ink">
-            <button onClick={() => smoothTo('shop')} className="nav-link">Shop</button>
-            <button onClick={() => smoothTo('kontakt')} className="nav-link">Kontakt</button>
+            {NAV.slice(2).map((n) =>
+              <button key={n.id} onClick={() => smoothTo(n.id)} className="nav-link">{n.label}</button>
+            )}
             <a href={IG_URL} target="_blank" rel="noopener noreferrer" className="nav-link inline-flex items-center gap-1.5">
               <Icon name="instagram" size={15} />
             </a>

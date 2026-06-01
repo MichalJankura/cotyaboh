@@ -2,6 +2,7 @@ import { Icon, smoothTo } from '../lib';
 
 const NAV = [
   { label: 'O nás', id: 'onas' },
+  { label: 'Svätci', id: 'svatci' },
   { label: 'Kolekcia', id: 'kolekcia' },
   { label: 'Shop', id: 'shop' },
   { label: 'Kontakt', id: 'kontakt' },
