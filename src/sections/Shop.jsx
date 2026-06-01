@@ -67,8 +67,8 @@ function ProductModal({ product, onClose, onAdd }) {
     : '';
 
   const handleColorChange = (c) => {
+    if (!product.colors.some((col) => col.id === c)) return;
     setColor(c);
-    // if new color has no back, reset to front
     const newImgs = product.images[c] || {};
     if (!newImgs.back) setView('front');
   };
@@ -82,7 +82,7 @@ function ProductModal({ product, onClose, onAdd }) {
   };
 
   // Escape to close
-  useState(() => {
+  useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') onClose(); };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);

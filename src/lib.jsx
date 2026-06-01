@@ -23,7 +23,7 @@ export function Icon({ name, size = 22, stroke = 1.6, className = '', style }) {
     <svg className={className} style={style} width={size} height={size} viewBox="0 0 24 24"
          fill="none" stroke="currentColor" strokeWidth={stroke} strokeLinecap="round"
          strokeLinejoin="round" aria-hidden="true"
-         dangerouslySetInnerHTML={{ __html: ICON_PATHS[name] || '' }} />
+         dangerouslySetInnerHTML={{ __html: Object.hasOwn(ICON_PATHS, name) ? ICON_PATHS[name] : '' }} />
   );
 }
 
@@ -128,3 +128,11 @@ export function smoothTo(id) {
   window.scrollTo({ top, behavior: 'matchMedia' in window && window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   window.history.pushState(null, '', `#${id}`);
 }
+
+export const MAX_QTY = 99;
+
+export const makeKey = (id, color = '', size = '') => `${id}:${color}:${size}`;
+export const parseKey = (key) => {
+  const [id, color = '', size = ''] = key.split(':');
+  return { id, color, size };
+};

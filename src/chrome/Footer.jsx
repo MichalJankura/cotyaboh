@@ -16,7 +16,7 @@ export function Footer() {
             <a
               href={IG_URL}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 label text-[11px] text-bone border border-bone/30 px-6 py-3 hover:border-bone transition-colors whitespace-nowrap"
             >
               <Icon name="instagram" size={15} /> Sledovať na Instagrame
@@ -27,7 +27,7 @@ export function Footer() {
         <div className="pt-10 flex flex-col-reverse md:flex-row items-center justify-between gap-6">
           <p className="text-xs text-bone/40 font-sans">© {new Date().getFullYear()} Čo ty a Boh? — ručne tvorené s úmyslom.</p>
           <span className="font-display ital text-lg text-bone/70">Čo ty a Boh?</span>
-          <a href={IG_URL} target="_blank" rel="noopener" className="label text-[11px] text-bone/50 hover:text-bone transition-colors inline-flex items-center gap-2">
+          <a href={IG_URL} target="_blank" rel="noopener noreferrer" className="label text-[11px] text-bone/50 hover:text-bone transition-colors inline-flex items-center gap-2">
             <Icon name="instagram" size={16} /> @cotyaboh
           </a>
         </div>

@@ -137,6 +137,12 @@ image-slot {
   animation: modal-backdrop-in 0.22s ease both;
 }
 
+/* review slide-in */
+@keyframes review-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* marquee */
 @keyframes marquee { 
   from { 

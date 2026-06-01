@@ -1,14 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Header, MobileMenu, CartDrawer, Footer } from './chrome';
-import { Hero, Marquee, ONas, Desatoro, Why, ClosingBand, Shop } from './sections';
-import { smoothTo } from './lib';
+import { Hero, Marquee, ONas, Desatoro, Why, ClosingBand, Shop, Reviews } from './sections';
+import { smoothTo, makeKey, parseKey, MAX_QTY } from './lib';
 import './index.css';
-
-export const makeKey = (id, color = '', size = '') => `${id}:${color}:${size}`;
-export const parseKey = (key) => {
-  const [id, color = '', size = ''] = key.split(':');
-  return { id, color, size };
-};
 
 export const PRODUCTS = [
   {
@@ -77,15 +71,25 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const addItem = (id, color = '', size = '') => {
+    const product = PRODUCTS.find((p) => p.id === id);
+    if (!product) return;
+    if (product.hasColors && !product.colors.some((c) => c.id === color)) return;
+    if (product.hasSizes && !product.sizes.includes(size)) return;
     const key = makeKey(id, color, size);
-    setItems((prev) => ({ ...prev, [key]: (prev[key] || 0) + 1 }));
+    setItems((prev) => {
+      const current = prev[key] || 0;
+      if (current >= MAX_QTY) return prev;
+      return { ...prev, [key]: current + 1 };
+    });
     setCartOpen(true);
   };
 
   const changeQty = (key, delta) => {
     setItems((prev) => {
+      const { id } = parseKey(key);
+      if (!PRODUCTS.some((p) => p.id === id)) return prev;
       const next = { ...prev };
-      const v = (next[key] || 0) + delta;
+      const v = Math.min(MAX_QTY, (next[key] || 0) + delta);
       if (v <= 0) delete next[key]; else next[key] = v;
       return next;
     });
@@ -153,6 +157,7 @@ function App() {
         <Desatoro />
         <Why />
         <Shop products={PRODUCTS} onAdd={addItem} />
+        <Reviews />
         <ClosingBand onShop={() => smoothTo('shop')} />
       </main>
       <Footer />

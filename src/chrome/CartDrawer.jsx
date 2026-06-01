@@ -1,9 +1,4 @@
-import { Icon, eur } from '../lib';
-
-const parseKey = (key) => {
-  const [id, color = '', size = ''] = key.split(':');
-  return { id, color, size };
-};
+import { Icon, eur, parseKey } from '../lib';
 
 export function CartDrawer({ open, onClose, items, products, onQty }) {
   const lines = Object.keys(items)

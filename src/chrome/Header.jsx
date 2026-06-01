@@ -48,7 +48,7 @@ export function Header({ cartCount, cartTotal, onCartOpen, onMenuOpen }) {
           <nav className="hidden md:flex items-center gap-8 label text-[11px] text-ink">
             <button onClick={() => smoothTo('shop')} className="nav-link">Shop</button>
             <button onClick={() => smoothTo('kontakt')} className="nav-link">Kontakt</button>
-            <a href={IG_URL} target="_blank" rel="noopener" className="nav-link inline-flex items-center gap-1.5">
+            <a href={IG_URL} target="_blank" rel="noopener noreferrer" className="nav-link inline-flex items-center gap-1.5">
               <Icon name="instagram" size={15} />
             </a>
           </nav>

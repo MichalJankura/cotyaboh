@@ -31,7 +31,7 @@ export function MobileMenu({ open, onClose }) {
           )}
         </nav>
         <div className="mt-auto px-6 py-7 border-t border-line">
-          <a href={IG_URL} target="_blank" rel="noopener"
+          <a href={IG_URL} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 label text-[11px] text-ink-soft">
             <Icon name="instagram" size={16} /> @cotyaboh
           </a>

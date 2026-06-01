@@ -5,3 +5,4 @@ export { Desatoro } from './sections/Desatoro';
 export { Why } from './sections/Why';
 export { ClosingBand } from './sections/ClosingBand';
 export { Shop } from './sections/Shop';
+export { Reviews } from './sections/Reviews';
