@@ -69,7 +69,7 @@ const SAINTS = [
     verse: 'Kto je ako Boh?',
     verseRef: 'Zj 12, 7',
     bio: 'Veliteľ nebeských vojsk. Porazil Lucifera. Ochranca Cirkvi, duší v hodine smrti a všetkých, čo volajú jeho meno.',
-    merchQuote: 'Kto je ako Boh? Ten, kto si kúpi túto merch.',
+    merchQuote: 'Kto nosí merch ako Boh?',
     quoteAttr: 'Svätý Michal Archanjel, pravdepodobne',
   },
   {
@@ -82,7 +82,7 @@ const SAINTS = [
     verse: 'Neboj sa, lebo ja som s tebou; nehľaď ustrašene, lebo ja som tvoj Boh.',
     verseRef: 'Iz 41, 10',
     bio: 'Sedemnásťročné dievča z dedinky Domrémy. Hlasy, brnenie, bitky. Oslobodila Orléans, zmenila históriu Francúzska — a skončila na hranici, lebo si zvolila poslúchnuť Boha skôr než biskupov.',
-    merchQuote: 'Mne hovorili hlasy z neba. Tebe hovorí nápis na chrbte. Niekto si musí začať.',
+    merchQuote: 'Mne hovorili hlasy z neba. Tebe nech hovorí nápis na chrbte.',
     quoteAttr: 'Svätá Johanka z Arku, pravdepodobne',
   },
 
